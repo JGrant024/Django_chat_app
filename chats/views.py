@@ -1,7 +1,7 @@
 from rest_framework import generics
 from .models import Message, Channel
 from .serializers import MessageSerializer, ChannelSerializer 
-from .permissions import IsOwnerOrReadOnly
+from .permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly
 
 
 class MessageListAPIView(generics.ListCreateAPIView):
@@ -28,3 +28,4 @@ class ChannelListAPIView(generics.ListCreateAPIView):
 class ChannelDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Channel.objects.all()
     serializer_class = ChannelSerializer
+    permission_classes =  (IsAdminOrReadOnly,)
