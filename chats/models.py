@@ -12,6 +12,8 @@ class Channel(models.Model):
 class Message(models.Model):
     text = models.TextField()
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE, null=True)
-
+   
     def __str__(self):
         return self.text[:50]
+
+

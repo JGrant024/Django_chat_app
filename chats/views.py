@@ -17,9 +17,11 @@ class MessageDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 
 class ChannelListAPIView(generics.ListCreateAPIView):
     queryset = Channel.objects.all()
-    serializer_class = ChannelSerializer
+    serializer_class = ChannelSerializer 
 
 
 class ChannelDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Channel.objects.all()
     serializer_class = ChannelSerializer
+
+    
